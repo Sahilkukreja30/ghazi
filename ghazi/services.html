@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Ghazi Foods & Cold Storage Indore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* EXACT INDEX NAVBAR STYLE */
+        .glass-nav-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 0px !important;
+        }
+
+        .glass-nav-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #3b82f6;
+        }
+
+        .brand-gradient-card {
+            background: radial-gradient(circle at center, #1e40af 0%, #172554 100%);
+            border-right: 6px solid #3b82f6;
+            /* Red accent on right like requested */
+        }
+
+        .bounce-scroll {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        /* Snowman Style Section Header */
+        .section-header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .header-line {
+            height: 1px;
+            background: #e2e8f0;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .header-line::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #2563eb;
+            border-radius: 50%;
+            top: -2.5px;
+        }
+
+        .header-line-left::after {
+            right: 0;
+        }
+
+        .header-line-right::after {
+            left: 0;
+        }
+
+        .heading-main {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1e40af;
+            white-space: nowrap;
+        }
+
+        .temp-card {
+            border-top: 4px solid #3b82f6;
+            transition: all 0.4s ease;
+        }
+
+        .temp-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        #side-panel {
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(15, 23, 42, 0.1);
+            z-index: 1000;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #side-panel.open {
+            transform: translateX(0);
+        }
+
+        #side-panel a {
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="side-panel"
+        class="fixed top-0 right-0 h-full w-full md:w-[400px] z-[999] p-8 md:p-12 flex flex-col justify-center bg-white shadow-2xl">
+        <button onclick="toggleMenu()"
+            class="absolute top-10 right-10 text-slate-900 text-3xl hover:!text-blue-600 transition-colors">×</button>
+        <nav class="flex flex-col gap-4 md:gap-6">
+            <a href="index.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black tracking-tighter uppercase transition-all duration-300">About
+                Us</a>
+
+            <a href="infrastructure.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Infrastructure</a>
+
+            <a href="services.html" onclick="toggleMenu()" style="color: #2563eb !important;"
+                class="text-2xl md:text-4xl font-black hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Services</a>
+
+
+            <a href="tech.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Technology</a>
+
+            <a href="contact.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Contact
+                Us</a>
+
+            <a href="blogs.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Business
+                Blogs</a>
+        </nav>
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] px-2 md:px-10 py-4 md:py-8">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+            <div
+                class="glass-nav-item px-3 md:px-8 py-2 flex items-center overflow-hidden relative h-[42px] md:h-[50px] bg-white/10 backdrop-blur-md border border-white/20 shadow-inner">
+
+                <div class="absolute inset-0 z-0 pointer-events-none" style="background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent); 
+                width: 200%; 
+                animation: logo-shimmer 3s infinite linear;">
+                </div>
+
+                <style>
+                    @keyframes logo-shimmer {
+                        0% {
+                            transform: translateX(-100%);
+                        }
+
+                        100% {
+                            transform: translateX(50%);
+                        }
+                    }
+                </style>
+
+                <img src="assets/logo.png" alt="Ghazi Foods Logo"
+                    class="h-10 md:h-14 w-auto object-contain relative z-10 scale-[1.4] md:scale-[1.55] transform origin-center">
+            </div>
+
+            <div class="hidden lg:flex gap-4">
+                <a href="index.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-slate-700">ABOUT
+                    US</a>
+                <a href="infrastructure.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-slate-700">Infrastructure</a>
+                <a href="services.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-blue-600 border-blue-400/50 bg-blue-50/50">Services</a>
+                <a href="tech.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-slate-700">Technology</a>
+            </div>
+
+            <div class="flex gap-2 md:gap-4 items-center">
+                <a href="contact.html"
+                    class="glass-nav-item bg-blue-600 text-white px-3 md:px-8 py-2 text-[9px] md:text-[10px] font-black uppercase tracking-widest border-blue-600 shadow-lg shadow-blue-200 h-[42px] md:h-[50px] flex items-center justify-center">Contact
+                    Us</a>
+                <div onclick="toggleMenu()"
+                    class="glass-nav-item w-10 h-10 md:w-12 md:h-12 flex flex-col items-center justify-center gap-1 cursor-pointer group">
+                    <div class="w-4 h-[2px] bg-slate-900 group-hover:bg-blue-500 transition-all"></div>
+                    <div class="w-6 h-[2px] bg-slate-900 group-hover:bg-blue-500 transition-all"></div>
+                    <div class="w-4 h-[2px] bg-slate-900 group-hover:bg-blue-500 transition-all"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen w-full overflow-hidden flex items-center">
+        <img src="assets/services.webp" class="absolute inset-0 w-full h-full object-cover" alt="Services Hero">
+        <div class="absolute inset-0 bg-slate-900/40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full flex justify-end">
+
+            <div class="md:max-w-[600px] mt-32 md:mt-20 
+                bg-transparent 
+                md:bg-[radial-gradient(circle_at_center,_#1e40af_0%,_#172554_100%)] 
+                md:border-r-[6px] border-blue-500 
+                p-0 md:p-16 
+                text-right md:text-left" data-aos="fade-left">
+
+                <h1 class="text-white text-4xl md:text-7xl 
+                   font-black tracking-tighter leading-none mb-6 uppercase
+                   drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+                    OUR SERVICES
+                </h1>
+
+                <div class="w-16 h-[2px] bg-blue-500 mb-8 ml-auto md:ml-0"></div>
+
+                <p class="text-white/95 text-lg md:text-xl font-medium 
+                  leading-relaxed mb-8 md:max-w-full max-w-[90%] ml-auto
+                  drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
+                    Integrated temperature-controlled warehousing specializing in 100% product integrity. Built on 5
+                    decades of trust and cutting-edge tech.
+                </p>
+
+                <button onclick="document.getElementById('overview').scrollIntoView({behavior:'smooth'})" class="text-white font-black uppercase tracking-[0.3em] 
+                       text-[10px] flex items-center gap-3 
+                       justify-end md:justify-start group">
+                    <span class="underline underline-offset-8 decoration-blue-500">
+                        EXPLORE SOLUTIONS
+                    </span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <button onclick="document.getElementById('overview').scrollIntoView({behavior:'smooth'})"
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 bounce-scroll group outline-none">
+            <span
+                class="text-white text-[8px] font-black uppercase tracking-[0.4em] group-hover:text-blue-400 transition-colors">Explore
+                More</span>
+            <div
+                class="w-[22px] h-[38px] border-2 border-white/30 rounded-full flex justify-center p-1 group-hover:border-blue-500 transition-colors">
+                <div class="w-1 h-1.5 bg-blue-500 rounded-full"></div>
+            </div>
+        </button>
+    </section>
+
+    <div id="overview" class="bg-white">
+        <section class="py-16 md:py-24 border-b border-slate-50">
+            <div class="max-w-7xl mx-auto px-4 md:px-6">
+                <div class="section-header-wrapper" data-aos="fade-up">
+                    <div class="header-line header-line-left"></div>
+                    <span class="heading-main">Cold Chain Expertise</span>
+                    <div class="header-line header-line-right"></div>
+                </div>
+
+                <div class="text-center max-w-5xl mx-auto mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-8">
+                        Warehousing</h2>
+                    <p class="text-slate-500 text-sm md:text-lg leading-relaxed font-medium">
+                        Searching for the best cold storage in Indore? Ghazi Cold Storage provides end-to-end
+                        temperature-controlled warehousing solutions tailored to the needs of the modern supply chain.
+                        Our FSSAI-compliant facility is equipped to handle everything from deep-frozen seafood (-25°C)
+                        to ambient pharmaceutical storage. With 3588 pallet positions managed via advanced WMS and
+                        automated Radio Shuttle technology, we offer the highest storage density and fastest turnaround
+                        times in Central India. Whether it’s horticulture, confectionery, or life-saving medicines, our
+                        expert team and world-class infrastructure ensure your product's freshness and safety are never
+                        compromised.
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border border-slate-200 mb-20 shadow-sm overflow-hidden bg-white">
+
+                    <!-- COLUMN 1 -->
+                    <div class="flex flex-col border-r border-slate-200">
+                        <div
+                            class="bg-blue-600 text-white p-4 text-center font-black text-[10px] tracking-widest uppercase">
+                            -18° BELOW
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-box-open text-red-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Processed Meat</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-drumstick-bite text-orange-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Processed Poultry</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center flex-grow">
+                            <i class="fas fa-ice-cream text-pink-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Ice Cream</p>
+                        </div>
+                    </div>
+
+                    <!-- COLUMN 2 -->
+                    <div class="flex flex-col border-r border-slate-200">
+                        <div
+                            class="bg-blue-500 text-white p-4 text-center font-black text-[10px] tracking-widest uppercase">
+                            0° TO 5°
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-lemon text-yellow-400 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Fruits</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-cheese text-amber-400 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Dairy</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center flex-grow">
+                            <i class="fas fa-wine-bottle text-emerald-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Dressing</p>
+                        </div>
+                    </div>
+
+                    <!-- COLUMN 3 -->
+                    <div class="flex flex-col border-r border-slate-200">
+                        <div
+                            class="bg-blue-600 text-white p-4 text-center font-black text-[10px] tracking-widest uppercase">
+                            8° TO 10°
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-cloud-sun text-yellow-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Banana</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-seedling text-lime-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Dry Fruits</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center flex-grow">
+                            <i class="fas fa-carrot text-orange-400 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Vegetables</p>
+                        </div>
+                    </div>
+
+                    <!-- COLUMN 4 -->
+                    <div class="flex flex-col border-r border-slate-200">
+                        <div
+                            class="bg-blue-500 text-white p-4 text-center font-black text-[10px] tracking-widest uppercase">
+                            10° TO 20°
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-utensils text-rose-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Ready-To-Eat</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-cookie text-amber-700 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Chocolate</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center flex-grow">
+                            <i class="fas fa-egg text-yellow-300 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Eggs</p>
+                        </div>
+                    </div>
+
+                    <!-- COLUMN 5 -->
+                    <div class="flex flex-col border-r border-slate-200">
+                        <div
+                            class="bg-blue-600 text-white p-4 text-center font-black text-[10px] tracking-widest uppercase">
+                            Ambient
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-flask text-violet-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Chemicals</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-box text-stone-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Food Grains</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center flex-grow">
+                            <i class="fas fa-pills text-cyan-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Healthcare</p>
+                        </div>
+                    </div>
+
+                    <!-- COLUMN 6 -->
+                    <div class="flex flex-col">
+                        <div
+                            class="bg-blue-500 text-white p-4 text-center font-black text-[10px] tracking-widest uppercase">
+                            Dry
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-shopping-bag text-sky-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">FMCG Goods</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center border-b border-slate-100 flex-grow">
+                            <i class="fas fa-industry text-slate-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Industrial</p>
+                        </div>
+
+                        <div class="temp-card p-6 text-center flex-grow">
+                            <i class="fas fa-boxes text-indigo-500 text-2xl mb-3"></i>
+                            <p class="text-[9px] font-bold text-slate-700 uppercase">Merchandise</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <style>
+                    .temp-card {
+                        border-top: 4px solid #f1f5f9;
+                        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    }
+
+                    .temp-card:hover {
+                        border-top-color: #2563eb;
+                        background: linear-gradient(to bottom, #ffffff, #f8fbff);
+                        transform: translateY(-4px) scale(1.03);
+                        z-index: 10;
+
+                        box-shadow:
+                            0 15px 30px rgba(37, 99, 235, 0.08),
+                            inset 0 0 20px rgba(37, 99, 235, 0.04);
+                    }
+                </style>
+
+                <style>
+                    .temp-card {
+                        border-top: 4px solid #f1f5f9;
+                        /* Initial Grey */
+                        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    }
+
+                    .temp-card:hover {
+                        border-top-color: #2563eb;
+                        /* Blue on Hover */
+                        background: #f8fafc;
+                        transform: scale(1.02);
+                        z-index: 10;
+                        box-shadow: inset 0 0 20px rgba(37, 99, 235, 0.05);
+                    }
+                </style>
+
+                <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
+                    <div class="flex items-center justify-center gap-4 md:gap-10 mb-20" data-aos="fade-up">
+                        <div class="h-[1px] bg-slate-200 flex-grow relative hidden md:block">
+                            <div class="absolute right-0 -top-1 w-2 h-2 rounded-full bg-blue-600"></div>
+                        </div>
+                        <h3
+                            class="text-3xl md:text-6xl font-black text-slate-900 uppercase tracking-tighter whitespace-nowrap text-center">
+                            Our Strengths</h3>
+                        <div class="h-[1px] bg-slate-200 flex-grow relative hidden md:block">
+                            <div class="absolute left-0 -top-1 w-2 h-2 rounded-full bg-blue-600"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+
+                        <!-- CARD 1 -->
+                        <div class="group bg-white p-10 border border-slate-100 shadow-lg transition-all duration-500 text-center rounded-2xl hover:-translate-y-4 overflow-hidden relative"
+                            data-aos="fade-up">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-orange-50 to-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-8 transition-all shadow-inner group-hover:scale-110">
+                                    <i class="fas fa-boxes text-orange-500 text-3xl"></i>
+                                </div>
+
+                                <span class="text-2xl font-light text-orange-200 block mb-2 tracking-tighter">01</span>
+
+                                <h4 class="text-xs font-black uppercase text-slate-900 mb-6 tracking-widest">
+                                    Palletized Storage
+                                </h4>
+
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                    Ghazi Foods utilizes high-density palletized storage systems across its Indore unit.
+                                    This ensures precision cataloging, safe handling of heavy-duty cargo, and rapid
+                                    automated retrieval while maximizing vertical space and floor efficiency.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="group bg-white p-10 border border-slate-100 shadow-lg transition-all duration-500 text-center rounded-2xl hover:-translate-y-4 overflow-hidden relative"
+                            data-aos="fade-up" data-aos-delay="100">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-cyan-100 flex items-center justify-center mx-auto mb-8 transition-all shadow-inner group-hover:scale-110">
+                                    <i class="fas fa-truck-loading text-cyan-600 text-3xl"></i>
+                                </div>
+
+                                <span class="text-2xl font-light text-cyan-200 block mb-2 tracking-tighter">02</span>
+
+                                <h4 class="text-xs font-black uppercase text-slate-900 mb-6 tracking-widest">
+                                    State of the Art Reach Truck
+                                </h4>
+
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                    Our facilities are powered by a premium fleet of battery-operated reach trucks and
+                                    industrial forklifts. Integrated with automated dock-levelers, we guarantee swift,
+                                    damage-free movement for temperature-sensitive SKUs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CARD 3 -->
+                        <div class="group bg-white p-10 border border-slate-100 shadow-lg transition-all duration-500 text-center rounded-2xl hover:-translate-y-4 overflow-hidden relative"
+                            data-aos="fade-up" data-aos-delay="200">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-8 transition-all shadow-inner group-hover:scale-110">
+                                    <i class="fas fa-leaf text-green-600 text-3xl"></i>
+                                </div>
+
+                                <span class="text-2xl font-light text-green-200 block mb-2 tracking-tighter">03</span>
+
+                                <h4 class="text-xs font-black uppercase text-slate-900 mb-6 tracking-widest">
+                                    Multi-Facility Eco Refrigerant
+                                </h4>
+
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                    Using advanced R-404A eco-friendly refrigerants, our multi-chamber infrastructure
+                                    maintains strict thermal integrity for varied sectors including dairy,
+                                    pharmaceutical,
+                                    horticulture, and processed frozen meats.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4 -->
+                        <div class="group bg-white p-10 border border-slate-100 shadow-lg transition-all duration-500 text-center rounded-2xl hover:-translate-y-4 overflow-hidden relative"
+                            data-aos="fade-up" data-aos-delay="300">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-8 transition-all shadow-inner group-hover:scale-110">
+                                    <i class="fas fa-bolt text-yellow-500 text-3xl"></i>
+                                </div>
+
+                                <span class="text-2xl font-light text-yellow-200 block mb-2 tracking-tighter">04</span>
+
+                                <h4 class="text-xs font-black uppercase text-slate-900 mb-6 tracking-widest">
+                                    100% Power Backup
+                                </h4>
+
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                    Zero temperature fluctuation is our core promise. Equipped with multiple high-load
+                                    industrial generators, we provide total power redundancy to ensure uninterrupted
+                                    refrigeration 24/7.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                        <!-- CARD 5 -->
+                        <div class="group bg-white p-10 border border-slate-100 shadow-lg transition-all duration-500 text-center rounded-2xl hover:-translate-y-4 overflow-hidden relative"
+                            data-aos="fade-up">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center mx-auto mb-8 transition-all shadow-inner group-hover:scale-110">
+                                    <i class="fas fa-clock text-indigo-600 text-3xl"></i>
+                                </div>
+
+                                <span class="text-2xl font-light text-indigo-200 block mb-2 tracking-tighter">05</span>
+
+                                <h4 class="text-sm font-black uppercase text-slate-900 mb-6 tracking-widest">
+                                    24 X 7 OPERATIONS
+                                </h4>
+
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                    We possess capabilities to execute 24 X 7 warehousing and transportation operations
+                                    with firm process mechanisms throughout the spectrum of business offerings.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CARD 6 -->
+                        <div class="group bg-white p-10 border border-slate-100 shadow-lg transition-all duration-500 text-center rounded-2xl hover:-translate-y-4 overflow-hidden relative"
+                            data-aos="fade-up" data-aos-delay="100">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-rose-50 to-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-rose-100 flex items-center justify-center mx-auto mb-8 transition-all shadow-inner group-hover:scale-110">
+                                    <i class="fas fa-headset text-rose-500 text-3xl"></i>
+                                </div>
+
+                                <span class="text-2xl font-light text-rose-200 block mb-2 tracking-tighter">06</span>
+
+                                <h4 class="text-sm font-black uppercase text-slate-900 mb-6 tracking-widest">
+                                    COMMAND CENTRE
+                                </h4>
+
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                    Our operations are closely monitored by a central team ensuring safe handling and
+                                    real-time operational visibility for every client shipment.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- CARD 7 -->
+                        <div class="group bg-white p-10 border border-slate-100 shadow-lg transition-all duration-500 text-center rounded-2xl hover:-translate-y-4 overflow-hidden relative"
+                            data-aos="fade-up" data-aos-delay="200">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-violet-50 to-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-violet-100 flex items-center justify-center mx-auto mb-8 transition-all shadow-inner group-hover:scale-110">
+                                    <i class="fas fa-project-diagram text-violet-600 text-3xl"></i>
+                                </div>
+
+                                <span class="text-2xl font-light text-violet-200 block mb-2 tracking-tighter">07</span>
+
+                                <h4 class="text-sm font-black uppercase text-slate-900 mb-6 tracking-widest">
+                                    End-to-End Solutions
+                                </h4>
+
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                                    We offer streamlined storage and inventory solutions covering the product lifecycle
+                                    from procurement to final dispatch with maximum efficiency.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <style>
+                        .group:hover {
+                            box-shadow:
+                                0 20px 40px rgba(37, 99, 235, 0.12),
+                                0 0 30px rgba(59, 130, 246, 0.08);
+                        }
+                    </style>
+                </div>
+            </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <footer class="pt-20 md:pt-32 pb-10 px-6 relative border-t border-white/10 text-white"
+        style="background: radial-gradient(circle at center, #1e40af 0%, #172554 100%);">
+
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-20 mb-16 md:mb-24">
+
+                <div class="col-span-1">
+                    <div class="text-2xl md:text-3xl font-black tracking-tighter italic text-cyan-400 mb-6 md:mb-8">
+                        GHAZI COLD STORAGE
+                    </div>
+                    <p class="text-blue-100/70 text-sm leading-relaxed mb-6 italic">
+                        "India's leading cold chain partner since 1968. We specialize in high-performance cold storage
+                        solutions in Indore, preserving the freshness of food and pharma products with precision
+                        temperature control."
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-widest text-xs mb-6 md:mb-8">Quick Links</h5>
+                    <ul class="text-blue-100/60 space-y-4 text-[11px] uppercase tracking-widest font-bold">
+                        <li><a href="index.html" class="hover:text-cyan-400 transition">About Us</a></li>
+                        <li><a href="infrastructure.html" class="hover:text-cyan-400 transition">Infrastructure</a></li>
+                        <li><a href="services.html" class="hover:text-cyan-400 transition">Services</a></li>
+                        <li><a href="tech.html" class="hover:text-cyan-400 transition">Technology</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact Us</a></li>
+                        <li><a href="blogs.html" class="hover:text-cyan-400 transition">Business Blogs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-widest text-xs mb-6 md:mb-8">Connect With Us</h5>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <a href="https://instagram.com/ghazi.coldstorage" target="_blank"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="tel:+919425319696"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fas fa-phone text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/917879280008" target="_blank"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="mailto:info@ghazicold.com"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-widest text-xs mb-6 md:mb-8">Facility Location
+                    </h5>
+                    <p class="text-blue-100/80 text-[11px] font-bold uppercase tracking-widest leading-loose mb-6">
+                        154, Gram Peer Karadia, Shipra <br> A.B. Road, Indore (M.P.)
+                    </p>
+                    <a href="https://maps.app.goo.gl/7k4geBP4AdNgQjtn9"><button
+                            class="w-full border border-cyan-400 py-4 text-[10px] font-black uppercase tracking-widest mb-6 hover:bg-cyan-400 hover:text-white transition text-cyan-400">Visit
+                            Us On Maps</button></a>
+                    <div
+                        class="h-32 bg-white/5 flex items-center justify-center overflow-hidden border border-white/10 rounded-xl">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5538641826197!2d75.97200847386118!3d22.89293332115633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631beb9430ab2d%3A0x8950d70f0e423d44!2sGhazi%20Foods%20%26%20Cold%20Storage!5e0!3m2!1sen!2sin!4v1774539233926!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .shimmer-light {
+                    background: linear-gradient(90deg, #60a5fa 0%, #ffffff 50%, #60a5fa 100%);
+                    background-size: 200% auto;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: shimmer-effect 3s linear infinite;
+                }
+
+                @keyframes shimmer-effect {
+                    to {
+                        background-position: 200% center;
+                    }
+                }
+            </style>
+
+            <div
+                class="pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-center md:justify-between text-center md:text-left gap-4">
+                <p class="text-[10px] font-bold text-blue-100/40 uppercase tracking-widest">
+                    © 2026 Ghazi Cold Storage. All Rights Reserved.
+                </p>
+
+                <a href="https://www.cityreachdigital.com" target="_blank"
+                    class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300">
+                    <span class="shimmer-light">WEBSITE DESIGNED BY CITYREACH DIGITAL</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out-cubic',
+            disable: 'mobile'
+        });
+        function toggleMenu() { document.getElementById('side-panel').classList.toggle('open'); }
+    </script>
+</body>
+
+</html>

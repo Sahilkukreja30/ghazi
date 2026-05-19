@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ghazicold.com/index.html</loc>
+    <lastmod>2023-11-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ghazicold.com/infrastructure.html</loc>
+    <lastmod>2023-11-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ghazicold.com/services.html</loc>
+    <lastmod>2023-11-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ghazicold.com/tech.html</loc>
+    <lastmod>2023-11-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ghazicold.com/contact.html</loc>
+    <lastmod>2023-11-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ghazicold.com/blogs.html</loc>
+    <lastmod>2023-11-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+</urlset>

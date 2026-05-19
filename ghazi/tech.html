@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | Ghazi Foods & Cold Storage Indore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+            width: 100%;
+            scroll-behavior: smooth;
+        }
+
+        /* NAV STYLE */
+        .glass-nav-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 0px !important;
+        }
+
+        .glass-nav-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #3b82f6;
+        }
+
+        .brand-gradient-card {
+            background: radial-gradient(circle at center, #1e40af 0%, #172554 100%);
+            border-left: 6px solid #3b82f6;
+        }
+
+        /* Section Heading */
+        .section-header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .header-line {
+            height: 1px;
+            background: #cbd5e1;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .header-line::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #2563eb;
+            border-radius: 50%;
+            top: -2.5px;
+        }
+
+        .header-line-left::after {
+            right: 0;
+        }
+
+        .header-line-right::after {
+            left: 0;
+        }
+
+        .heading-main {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1e40af;
+            white-space: nowrap;
+        }
+
+        /* SKEUOMORPHIC CARD DESIGN */
+        .tech-card-skewmorphic {
+            background: #f1f5f9;
+            border-radius: 45px;
+            /* The Pop-out Effect */
+            box-shadow: 15px 15px 30px #d1d5db,
+                -15px -15px 30px #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* The Brand Blue Gradient Hover Overlay */
+        .tech-card-skewmorphic::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, #1e40af 0%, #172554 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .tech-card-skewmorphic:hover {
+            transform: scale(1.03) translateY(-10px);
+            box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-card-skewmorphic:hover::before {
+            opacity: 1;
+        }
+
+        /* Pressed Well for Icons */
+        .icon-well {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 8px 8px 16px #d1d5db,
+                inset -8px -8px 16px #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .tech-card-skewmorphic:hover .icon-well {
+            transform: scale(1.08);
+        }
+
+        .tech-card-skewmorphic:hover .card-num {
+            color: rgba(255, 255, 255, 0.12) !important;
+        }
+
+        .tech-card-skewmorphic:hover .icon-well {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Hover Text Color Shifts */
+        .tech-card-skewmorphic:hover h4 {
+            color: #ffffff !important;
+        }
+
+        .tech-card-skewmorphic:hover p {
+            color: #bfdbfe !important;
+        }
+
+        .tech-card-skewmorphic:hover i {
+            color: #ffffff !important;
+        }
+
+        .tech-card-skewmorphic:hover .card-num {
+            color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .bounce-scroll {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        #side-panel {
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(15, 23, 42, 0.1);
+            z-index: 1000;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #side-panel.open {
+            transform: translateX(0);
+        }
+
+        #side-panel a {
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="side-panel"
+        class="fixed top-0 right-0 h-full w-full md:w-[400px] z-[999] p-8 md:p-12 flex flex-col justify-center bg-white shadow-2xl">
+        <button onclick="toggleMenu()"
+            class="absolute top-10 right-10 text-slate-900 text-3xl hover:!text-blue-600 transition-colors">×</button>
+        <nav class="flex flex-col gap-4 md:gap-6">
+            <a href="index.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black tracking-tighter uppercase transition-all duration-300">About
+                Us</a>
+
+            <a href="infrastructure.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Infrastructure</a>
+
+            <a href="services.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Services</a>
+
+
+            <a href="tech.html" onclick="toggleMenu()" style="color: #2563eb !important;"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Technology</a>
+
+            <a href="contact.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Contact
+                Us</a>
+
+            <a href="blogs.html" onclick="toggleMenu()"
+                class="text-2xl md:text-4xl font-black text-slate-900 hover:!text-blue-600 hover:translate-x-2 transition-all duration-300 tracking-tighter uppercase">Business
+                Blogs</a>
+        </nav>
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] px-2 md:px-10 py-4 md:py-8">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+            <div
+                class="glass-nav-item px-3 md:px-8 py-2 flex items-center overflow-hidden relative h-[42px] md:h-[50px] bg-white/10 backdrop-blur-md border border-white/20 shadow-inner">
+
+                <div class="absolute inset-0 z-0 pointer-events-none" style="background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent); 
+                width: 200%; 
+                animation: logo-shimmer 3s infinite linear;">
+                </div>
+
+                <style>
+                    @keyframes logo-shimmer {
+                        0% {
+                            transform: translateX(-100%);
+                        }
+
+                        100% {
+                            transform: translateX(50%);
+                        }
+                    }
+                </style>
+
+                <img src="assets/logo.png" alt="Ghazi Foods Logo"
+                    class="h-10 md:h-14 w-auto object-contain relative z-10 scale-[1.4] md:scale-[1.55] transform origin-center">
+            </div>
+
+            <div class="hidden lg:flex gap-4">
+                <a href="index.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-slate-700">ABOUT
+                    US</a>
+                <a href="infrastructure.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-slate-700">Infrastructure</a>
+                <a href="services.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-slate-700">Services</a>
+                <a href="tech.html"
+                    class="glass-nav-item px-5 py-2 text-[9px] font-bold uppercase tracking-widest text-blue-600 border-blue-400/50 bg-blue-50/50">Technology</a>
+            </div>
+
+            <div class="flex gap-2 md:gap-4 items-center">
+                <a href="contact.html"
+                    class="glass-nav-item bg-blue-600 text-white px-3 md:px-8 py-2 text-[9px] md:text-[10px] font-black uppercase tracking-widest border-blue-600 shadow-lg shadow-blue-200 h-[42px] md:h-[50px] flex items-center justify-center">Contact
+                    Us</a>
+                <div onclick="toggleMenu()"
+                    class="glass-nav-item w-10 h-10 md:w-12 md:h-12 flex flex-col items-center justify-center gap-1 cursor-pointer group">
+                    <div class="w-4 h-[2px] bg-slate-900 group-hover:bg-blue-500 transition-all"></div>
+                    <div class="w-6 h-[2px] bg-slate-900 group-hover:bg-blue-500 transition-all"></div>
+                    <div class="w-4 h-[2px] bg-slate-900 group-hover:bg-blue-500 transition-all"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="relative h-screen w-full overflow-hidden flex items-center">
+        <img src="assets/techno.webp" class="absolute inset-0 w-full h-full object-cover brightness-[0.2]"
+            alt="Technology Hero">
+        <div class="absolute inset-0 bg-slate-900/40"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 w-full flex justify-start">
+            <div class="brand-gradient-card max-w-[600px] p-8 md:p-16 mt-20 text-left rounded-r-3xl"
+                data-aos="fade-right">
+                <h1 class="text-white text-3xl md:text-7xl font-black tracking-tighter leading-tight mb-6 uppercase">
+                    SMART SYSTEMS</h1>
+                <div class="w-16 h-[2px] bg-blue-500 mb-8"></div>
+                <p class="text-blue-100 text-sm md:text-xl font-medium leading-relaxed mb-8">
+                    Revolutionizing Central India's Cold Chain with <b>IoT integration</b>, real-time monitoring, and
+                    high-tech <b>Radio Shuttle Automation.</b>
+                </p>
+                <button onclick="document.getElementById('tech-grid').scrollIntoView({behavior:'smooth'})"
+                    class="text-white font-black uppercase tracking-[0.3em] text-[8px] md:text-[10px] flex items-center gap-3 group">
+                    <span class="underline underline-offset-8 decoration-blue-500">EXPLORE TECH</span> <i
+                        class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+        <button onclick="document.getElementById('tech-grid').scrollIntoView({behavior:'smooth'})"
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 bounce-scroll group outline-none cursor-pointer">
+
+            <span
+                class="text-white text-[8px] font-black uppercase tracking-[0.4em] opacity-70 group-hover:opacity-100 transition-opacity">
+                Explore More
+            </span>
+
+            <div
+                class="w-[22px] h-[38px] border-2 border-white/30 rounded-full flex justify-center p-1 group-hover:border-blue-500 transition-colors">
+                <div class="w-1 h-1.5 bg-blue-500 rounded-full"></div>
+            </div>
+        </button>
+    </section>
+
+    <div id="tech-grid" class="bg-slate-50 py-32">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="section-header-wrapper" data-aos="fade-up">
+                <div class="header-line header-line-left"></div>
+                <span class="heading-main">Smart Systems and IoT</span>
+                <div class="header-line header-line-right"></div>
+            </div>
+            <h2 class="text-center text-3xl md:text-6xl font-black text-slate-900 uppercase tracking-tighter mb-24">WHY
+                BUSINESSES CHOOSE US</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <!-- CARD 1 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up">
+                    <div class="icon-well bg-orange-50">
+                        <i class="fas fa-server text-orange-500 text-3xl"></i>
+                    </div>
+
+                    <span
+                        class="card-num text-3xl font-black text-orange-200 block mb-2 tracking-tighter transition-colors">
+                        01
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-orange-600 mb-6 tracking-widest transition-colors">
+                        Microsoft Dynamics 365 Business Central
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium transition-colors">
+                        Fully integrated WMS managing operations, warehousing, finance, CRM, and supply chain.
+                    </p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-well bg-cyan-50">
+                        <i class="fas fa-truck text-cyan-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-cyan-200 block mb-2 tracking-tighter">
+                        02
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-cyan-600 mb-6 tracking-widest">
+                        Transport Management System
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        Integrated system, contract management, POD auditing with on-time delivery performance.
+                    </p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-well bg-green-50">
+                        <i class="fas fa-headset text-green-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-green-200 block mb-2 tracking-tighter">
+                        03
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-green-600 mb-6 tracking-widest">
+                        24x7 Command Centre
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        IoT-based dynamic monitoring of facility functions and vehicle movements.
+                    </p>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-well bg-red-50">
+                        <i class="fas fa-thermometer-half text-red-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-red-200 block mb-2 tracking-tighter">
+                        04
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-red-500 mb-6 tracking-widest">
+                        Online Chamber Monitoring
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        Online chamber monitoring for real-time temperature control with multi-level alerts.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto mb-12">
+
+                <!-- CARD 5 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up">
+                    <div class="icon-well bg-indigo-50">
+                        <i class="fas fa-clipboard-list text-indigo-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-indigo-200 block mb-2 tracking-tighter">
+                        05
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-indigo-600 mb-6 tracking-widest">
+                        Order Management System
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        A network-enabled technology platform designed to orchestrate the entire ecosystem.
+                    </p>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-well bg-violet-50">
+                        <i class="fas fa-tasks text-violet-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-violet-200 block mb-2 tracking-tighter">
+                        06
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-violet-600 mb-6 tracking-widest">
+                        Warehouse Compliance Management
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        Mobile app-based online checklists ensuring 100% warehouse compliance and hygiene.
+                    </p>
+                </div>
+
+                <!-- CARD 7 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-well bg-rose-50">
+                        <i class="fas fa-lock text-rose-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-rose-200 block mb-2 tracking-tighter">
+                        07
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-rose-600 mb-6 tracking-widest">
+                        Digital Locking
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        Secure electronic locking systems for chambers and vehicles to prevent unauthorized access.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
+
+                <!-- CARD 8 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up">
+                    <div class="icon-well bg-amber-50">
+                        <i class="fas fa-chart-line text-amber-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-amber-200 block mb-2 tracking-tighter">
+                        08
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-amber-600 mb-6 tracking-widest">
+                        Dashboards and Reports
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        Robust and transparent reporting providing clients with instant insights into their stock.
+                    </p>
+                </div>
+
+                <!-- CARD 9 -->
+                <div class="tech-card-skewmorphic p-10 text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-well bg-sky-50">
+                        <i class="fas fa-ticket-alt text-sky-500 text-3xl"></i>
+                    </div>
+
+                    <span class="card-num text-3xl font-black text-sky-200 block mb-2 tracking-tighter">
+                        09
+                    </span>
+
+                    <h4 class="text-xs font-black uppercase text-sky-600 mb-6 tracking-widest">
+                        Complaint Ticketing System
+                    </h4>
+
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        Tracking internal technical complaints and client resolutions with a digital mechanism.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <section class="py-24 md:py-32 relative overflow-hidden"
+        style="background: radial-gradient(circle at center, #1e40af 0%, #172554 100%);">
+        <!-- Abstract shapes background -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-cyan-400/10 blur-[100px] rounded-full">
+            </div>
+            <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+            <div class="relative h-[400px] md:h-[600px] flex items-center justify-center group perspective-1000"
+                data-aos="fade-right">
+                <!-- 3D Rotating Video Container -->
+                <div
+                    class="w-full h-full relative transition-transform duration-1000 transform-style-3d group-hover:rotate-y-6 group-hover:rotate-x-3">
+                    <div
+                        class="absolute inset-[-4px] rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-600 to-cyan-400 opacity-50 blur-lg group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                    </div>
+                    <video autoplay muted loop playsinline
+                        class="w-full h-full object-cover shadow-[0_20px_50px_rgba(6,182,212,0.3)] rounded-2xl relative z-10 border border-white/20">
+                        <source src="assets/new.webm" type="video/mp4">
+                    </video>
+
+                    <!-- Overlay Glows -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-cyan-400/10 to-transparent rounded-2xl pointer-events-none z-20">
+                    </div>
+
+                    <!-- Floating Data Tags (Dark Mode) -->
+                    <div
+                        class="absolute top-10 -right-6 bg-slate-900 border border-cyan-500/30 shadow-[0_0_20px_rgba(6,182,212,0.2)] px-4 py-2 rounded-lg font-bold text-xs text-white animate-pulse z-30">
+                        <span class="text-cyan-400"><i class="fas fa-bolt mr-2"></i></span> 100% Automated
+                    </div>
+                    <div
+                        class="absolute bottom-20 -left-6 bg-slate-900 border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)] px-4 py-2 rounded-lg font-bold text-xs text-white animate-pulse delay-500 z-30">
+                        <span class="text-blue-400"><i class="fas fa-stopwatch mr-2"></i></span> Lightning Fast
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left" data-aos-delay="200">
+                <span class="text-cyan-400 font-bold uppercase tracking-[0.4em] text-xs inline-block mb-2 group"><i
+                        class="fas fa-microchip mr-2"></i> Leading Cold Storage Facility in Indore</span>
+                <h2
+                    class="text-3xl md:text-5xl font-black tracking-tighter mt-4 mb-8 leading-tight text-white drop-shadow-md">
+                    Radio Shuttle <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-300 bg-[length:200%_auto] animate-gradient-flow block">Technology.</span>
+                </h2>
+                <h3 class="text-xl md:text-2xl font-bold text-blue-200 mb-6 tracking-tight">First Radio Shuttle For Cold
+                    Industry in Central India</h3>
+                <p class="text-blue-100/80 text-base md:text-lg leading-relaxed mb-10">
+                    Revolutionize your supply chain with Central India's first fully mechanized high-density storage
+                    system. By completely eliminating manual forklift entry into our deep-freeze zones, we guarantee
+                    pristine temperature preservation and ultra-efficient retrieval for your valuable goods.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                    <div
+                        class="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 -translate-y-1/2 pointer-events-none hidden md:block">
+                    </div>
+
+                    <div
+                        class="group border-l-4 border-slate-700/50 hover:border-cyan-400 pl-4 transition-all duration-300 hover:-translate-y-1 bg-white/5 p-4 rounded-r-xl border-y border-r border-transparent hover:border-white/5 hover:bg-white/10 hover:shadow-[0_10px_30px_rgba(6,182,212,0.15)]">
+                        <h4
+                            class="font-bold text-white mb-2 uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-cyan-300 transition-colors">
+                            <i class="fas fa-box text-cyan-500"></i> Max Density
+                        </h4>
+                        <p class="text-sm text-blue-200/70">3,588 dedicated pallet positions maximizing space utility.
+                        </p>
+                    </div>
+                    <div
+                        class="group border-l-4 border-slate-700/50 hover:border-cyan-400 pl-4 transition-all duration-300 hover:-translate-y-1 bg-white/5 p-4 rounded-r-xl border-y border-r border-transparent hover:border-white/5 hover:bg-white/10 hover:shadow-[0_10px_30px_rgba(6,182,212,0.15)]">
+                        <h4
+                            class="font-bold text-white mb-2 uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-cyan-300 transition-colors">
+                            <i class="fas fa-shield-alt text-cyan-500"></i> Zero Damage
+                        </h4>
+                        <p class="text-sm text-blue-200/70">Mechanized handling eliminates human error entirely.</p>
+                    </div>
+                    <div
+                        class="group border-l-4 border-slate-700/50 hover:border-blue-400 pl-4 transition-all duration-300 hover:-translate-y-1 bg-white/5 p-4 rounded-r-xl border-y border-r border-transparent hover:border-white/5 hover:bg-white/10 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)]">
+                        <h4
+                            class="font-bold text-white mb-2 uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-blue-300 transition-colors">
+                            <i class="fas fa-thermometer-snow text-blue-400"></i> Precision Cooling
+                        </h4>
+                        <p class="text-sm text-blue-200/70">Locked thermal seals prevent temperature loss.</p>
+                    </div>
+                    <div
+                        class="group border-l-4 border-slate-700/50 hover:border-blue-400 pl-4 transition-all duration-300 hover:-translate-y-1 bg-white/5 p-4 rounded-r-xl border-y border-r border-transparent hover:border-white/5 hover:bg-white/10 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)]">
+                        <h4
+                            class="font-bold text-white mb-2 uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-blue-300 transition-colors">
+                            <i class="fas fa-stopwatch text-blue-400"></i> Rapid Retrieval
+                        </h4>
+                        <p class="text-sm text-blue-200/70">Expedited logistics flows for immediate turnaround.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .perspective-1000 {
+                perspective: 1000px;
+            }
+
+            .transform-style-3d {
+                transform-style: preserve-3d;
+            }
+
+            .rotate-y-6 {
+                transform: rotateY(6deg);
+            }
+
+            .rotate-x-3 {
+                transform: rotateX(3deg);
+            }
+        </style>
+    </section>
+
+    <footer class="pt-20 md:pt-32 pb-10 px-6 relative border-t border-white/10 text-white"
+        style="background: radial-gradient(circle at center, #1e40af 0%, #172554 100%);">
+
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-20 mb-16 md:mb-24">
+
+                <div class="col-span-1">
+                    <div class="text-2xl md:text-3xl font-black tracking-tighter italic text-cyan-400 mb-6 md:mb-8">
+                        GHAZI COLD STORAGE
+                    </div>
+                    <p class="text-blue-100/70 text-sm leading-relaxed mb-6 italic">
+                        "India's leading cold chain partner since 1968. We specialize in high-performance cold storage
+                        solutions in Indore, preserving the freshness of food and pharma products with precision
+                        temperature control."
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-widest text-xs mb-6 md:mb-8">Quick Links</h5>
+                    <ul class="text-blue-100/60 space-y-4 text-[11px] uppercase tracking-widest font-bold">
+                        <li><a href="index.html" class="hover:text-cyan-400 transition">About Us</a></li>
+                        <li><a href="infrastructure.html" class="hover:text-cyan-400 transition">Infrastructure</a></li>
+                        <li><a href="services.html" class="hover:text-cyan-400 transition">Services</a></li>
+                        <li><a href="tech.html" class="hover:text-cyan-400 transition">Technology</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact Us</a></li>
+                        <li><a href="blogs.html" class="hover:text-cyan-400 transition">Business Blogs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-widest text-xs mb-6 md:mb-8">Connect With Us</h5>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <a href="https://instagram.com/ghazi.coldstorage" target="_blank"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="tel:+919425319696"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fas fa-phone text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/917879280008" target="_blank"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="mailto:info@ghazicold.com"
+                            class="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition rounded-full bg-white/5 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-widest text-xs mb-6 md:mb-8">Facility Location
+                    </h5>
+                    <p class="text-blue-100/80 text-[11px] font-bold uppercase tracking-widest leading-loose mb-6">
+                        154, Gram Peer Karadia, Shipra <br> A.B. Road, Indore (M.P.)
+                    </p>
+                    <a href="https://maps.app.goo.gl/7k4geBP4AdNgQjtn9"><button
+                            class="w-full border border-cyan-400 py-4 text-[10px] font-black uppercase tracking-widest mb-6 hover:bg-cyan-400 hover:text-white transition text-cyan-400">Visit
+                            Us On Maps</button></a>
+                    <div
+                        class="h-32 bg-white/5 flex items-center justify-center overflow-hidden border border-white/10 rounded-xl">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5538641826197!2d75.97200847386118!3d22.89293332115633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631beb9430ab2d%3A0x8950d70f0e423d44!2sGhazi%20Foods%20%26%20Cold%20Storage!5e0!3m2!1sen!2sin!4v1774539233926!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .shimmer-light {
+                    background: linear-gradient(90deg, #60a5fa 0%, #ffffff 50%, #60a5fa 100%);
+                    background-size: 200% auto;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: shimmer-effect 3s linear infinite;
+                }
+
+                @keyframes shimmer-effect {
+                    to {
+                        background-position: 200% center;
+                    }
+                }
+            </style>
+
+            <div
+                class="pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-center md:justify-between text-center md:text-left gap-4">
+                <p class="text-[10px] font-bold text-blue-100/40 uppercase tracking-widest">
+                    © 2026 Ghazi Cold Storage. All Rights Reserved.
+                </p>
+
+                <a href="https://www.cityreachdigital.com" target="_blank"
+                    class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300">
+                    <span class="shimmer-light">WEBSITE DESIGNED BY CITYREACH DIGITAL</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out-cubic',
+            disable: 'mobile'
+        });
+        function toggleMenu() { document.getElementById('side-panel').classList.toggle('open'); }
+    </script>
+</body>
+
+</html>
