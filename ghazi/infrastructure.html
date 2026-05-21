@@ -248,9 +248,12 @@
         </div>
     </nav>
     <section class="relative h-screen w-full overflow-hidden flex items-center">
-        <img src="assets/infra.webp" class="absolute inset-0 w-full h-full object-cover" alt="Infra Hero">
-        <div class="absolute inset-0 bg-slate-900/40"></div>
-
+        <img src="assets/ghazi13.webp" class="absolute inset-0 w-full h-full object-cover" alt="Infra Hero">
+        <!-- Mobile Dark Overlay -->
+        <div class="absolute inset-0 
+    bg-black/45 
+    md:bg-black/20">
+        </div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
 
             <div class="max-w-[600px] mt-32 md:mt-24 
@@ -271,12 +274,25 @@
                     optimized inventory, and precise temperature control.
                 </p>
 
-                <button onclick="document.getElementById('details').scrollIntoView({behavior:'smooth'})" class="text-white font-black uppercase tracking-[0.3em] 
-                       text-[10px] flex items-center gap-3 group">
-                    <span class="underline underline-offset-8 decoration-blue-500">
+                <button onclick="document.getElementById('details').scrollIntoView({behavior:'smooth'})" class="inline-flex items-center gap-3
+           border border-white/40
+           px-6 py-3
+           text-white
+           font-black uppercase tracking-[0.25em]
+           text-[10px]
+           backdrop-blur-sm
+           bg-white/10
+           hover:bg-blue-500
+           hover:border-blue-400
+           transition-all duration-500
+           rounded-full
+           shadow-[0_0_25px_rgba(255,255,255,0.08)]">
+
+                    <span>
                         KNOW MORE
                     </span>
-                    <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+
+                    <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
                 </button>
 
             </div>
@@ -428,7 +444,7 @@
                         GHAZI COLD STORAGE
                     </div>
                     <p class="text-blue-100/70 text-sm leading-relaxed mb-6 italic">
-                        "India's leading cold chain partner since 1968. We specialize in high-performance cold storage
+                        "India's leading cold chain partner since 2023. We specialize in high-performance cold storage
                         solutions in Indore, preserving the freshness of food and pharma products with precision
                         temperature control."
                     </p>
